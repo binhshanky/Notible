@@ -13,7 +13,7 @@ function isImage(msg) {
 function isVoice(msg) {
     const urlparse = url.parse(msg);
     if (urlparse.protocol !== 'https:') return false;
-    if (urlparse.hostname.includes("fbcdn.net") && urlparse.pathname.endsWith(".mp4") && urlparse.pathname.endsWith(".acc")) return true
+    if (urlparse.hostname.includes("fbcdn.net") && (urlparse.pathname.endsWith(".mp4") || urlparse.pathname.endsWith(".acc"))) return true
     return false;
 }
 
