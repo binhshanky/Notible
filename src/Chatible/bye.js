@@ -64,7 +64,7 @@ export function byeOne(senderId) {
                 },
                 (err) => {
                     if (err) throw err;
-                    ChatfuelAPI.sendText(senderId, "Bạn đã huỷ tìm bạn").then(() => {
+                    ChatfuelAPI.sendText(senderId, "Bạn đã huỷ tìm bạn. Gõ bất cứ thứ gì để tìm kiếm lại.").then(() => {
                         db.close(null, () => {
                             resolve(true)
                         })
