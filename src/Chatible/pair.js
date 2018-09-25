@@ -32,7 +32,7 @@ export default (id1, id2) => {
                         },
                         (err) => {
                             if (err) throw err;
-                            return Promise.all([ChatfuelAPI.sendText(id1, "Đã tìm thấy một người lạ :D hãy thử chào nhau xem"), ChatfuelAPI.sendText(id2, "Đã tìm thấy một người lạ :D hãy thử chào nhau xem")]).then(() => {
+                            return Promise.all([ChatfuelAPI.sendText(id1, "Đã tìm thấy một người lạ :D hãy chào nhau nào."), ChatfuelAPI.sendText(id2, "Đã tìm thấy một người lạ :D hãy chào nhau nào.")]).then(() => {
                                 db.close(null, () => {
                                     resolve(true)
                                 })
