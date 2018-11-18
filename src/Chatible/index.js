@@ -29,10 +29,10 @@ export default async (user) => {
             return Promise.all([findPair(), ChatfuelAPI.sendText(user.senderId, "Đang tìm kiếm đối tượng")]).then(() => {})
         })
     } else if (userDb.status === 1) {
-        if (user.msg.toLowerCase() === "pp") return await byeOne(user.senderId)
+        if (user.msg.toLowerCase() === "end") return await byeOne(user.senderId)
         return await ChatfuelAPI.sendText(user.senderId, "Chờ chút. Yêu cầu của bạn chắc bây giờ không có ai cả :(. Thử huỷ đi chọn lại hoặc chờ đợi nhé")
     } else if (userDb.idCouple) {
-        if (user.msg.toLowerCase() === "pp") return await bye(user.senderId, userDb.idCouple)
+        if (user.msg.toLowerCase() === "end") return await bye(user.senderId, userDb.idCouple)
         cache.put(user.senderId, userDb.idCouple)
         return handleMessage(userDb.idCouple, user.msg);
     }
