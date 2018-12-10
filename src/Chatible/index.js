@@ -35,5 +35,8 @@ export default async (user) => {
         if (user.msg.toLowerCase() === "end") return await bye(user.senderId, userDb.idCouple)
         cache.put(user.senderId, userDb.idCouple)
         return handleMessage(userDb.idCouple, user.msg);
+    } else {
+        
+        if (user.msg.toLowerCase() === "end") return await bye(user.senderId, userDb.idCouple)
     }
 }
