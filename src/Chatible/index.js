@@ -16,7 +16,7 @@ const ChatfuelAPI = new Chatfuel();
 export default async (user) => {
     const idCouple = cache.get(user.senderId)
     if (idCouple) {
-        if (user.msg.toLowerCase() === "pp") return await bye(user.senderId, idCouple)
+        if (user.msg.toLowerCase() === "end") return await bye(user.senderId, idCouple)
         return handleMessage(idCouple, user.msg);
     }
     const userDb = await findUser(user.senderId);
