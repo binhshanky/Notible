@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.get('/ping', (_, res) => res.send("pong"))
+app.get('/status, (_,res) => res.send('{"status":"online"}'));
 
 app.use('/chatible', Chatible)
 app.use('/get', GetMessage)
